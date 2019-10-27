@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bobi | 在线工具-文件大小转换</title>
+    <meta name="keywords" content="tool,bobi tool,bobi's tool,bobi-tool,在线工具,bobi在线工具,个人在线工具平台,bobi个人在线工具平台">
+    <meta name="description" content="这是bobi的个人在线工具平台，主要提供有各种开发文档api，如JDK1.6中文文档及各种pdf书籍。也提供各种在线小工具，如vip在线影院、二维码生成及字母大小写转换等工具。">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.css">
+    <style>
+        body {
+            background: url(imgs/bg.png) repeat;
+        }
+
+        .navbar {
+            margin-bottom: 5px;
+        }
+
+        .border-left {
+            border-left: none;
+        }
+
+        .border-right {
+            border-right: none;
+        }
+
+        .mt10 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <!--导航栏-->
+    <div id="navbar"></div>
+    <!--正文内容-->
+    <div class="input-group">
+        <input type="text" class="form-control border-right" placeholder="请输入内容(单位为B)" id="question">
+        <span class="input-group-addon">=</span>
+        <input type="text" class="form-control border-left" placeholder="这里是结果" id="answer">
+    </div>
+    <div class="input-group mt10">
+        <input type="text" class="form-control border-right" placeholder="请输入内容(单位为KB)" id="question2">
+        <span class="input-group-addon" id="basic-addon1">=</span>
+        <input type="text" class="form-control border-left" placeholder="这里是结果" id="answer2">
+    </div>
+    <!--底部信息-->
+    <div id="footer"></div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/nprogress.js"></script>
+<script>
+    // 引入公共页面
+    $("#navbar").load("common/header.html");
+    $("#footer").load("common/footer.html");
+
+    // 监听文本框变化
+    $("#question").on('input propertychange', function () {
+        var _val = $(this).val();
+        if (isNaN(_val)) {
+            $("#answer").val("请输入数字类型！");
+            return;
+        }
+        $("#answer").val(getFilesize(_val));
+    })
+
+    /**
+     * 计算文件大小函数(保留两位小数)
+     * @param size ,Size为字节大小
+     * @returns {string}
+     */
+    function getFilesize(size) {
+        if (!size)
+            return "";
+        var num = 1024.00; //byte
+        if (size < num)
+            return size + "B";
+        if (size < Math.pow(num, 2))
+            return (size / num).toFixed(2) + "K"; //kb
+        if (size < Math.pow(num, 3))
+            return (size / Math.pow(num, 2)).toFixed(2) + "M"; //M
+        if (size < Math.pow(num, 4))
+            return (size / Math.pow(num, 3)).toFixed(2) + "G"; //G
+        return (size / Math.pow(num, 4)).toFixed(2) + "T"; //T
+    }
+
+    // 监听文本框变化
+    $("#question2").on('input propertychange', function () {
+        var _val = $(this).val();
+        if (isNaN(_val)) {
+            $("#answer2").val("请输入数字类型！");
+            return;
+        }
+        $("#answer2").val(getFilesize2(_val));
+    })
+
+    /**
+     * 计算文件大小函数(保留两位小数)
+     * @param size
+     * @returns {string}
+     */
+    function getFilesize2(size) {
+        if (!size)
+            return "";
+        var num = 1024.00;
+        if (size < num)
+            return size + "K";
+        if (size < Math.pow(num, 2))
+            return (size / num).toFixed(2) + "M";
+        if (size < Math.pow(num, 3))
+            return (size / Math.pow(num, 2)).toFixed(2) + "G";
+        return (size / Math.pow(num, 3)).toFixed(2) + "T";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bobi | 在线工具</title>
+    <meta name="keywords" content="tool,bobi tool,bobi's tool,bobi-tool,在线工具,bobi在线工具,个人在线工具平台,bobi个人在线工具平台">
+    <meta name="description" content="这是bobi的个人在线工具平台，主要提供有各种开发文档api，如JDK1.6中文文档及各种pdf书籍。也提供各种在线小工具，如vip在线影院、二维码生成及字母大小写转换等工具。">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon"/>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.css">
+    <style>
+        body {
+            background: url(imgs/bg.png) repeat;
+        }
+
+        .navbar {
+            margin-bottom: 5px;
+        }
+
+        .carousel .item {
+            height: 360px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .list-group {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <!--导航栏-->
+    <div id="navbar"></div>
+    <!--轮播图-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img class="first-slide" src="imgs/01.jpg" alt="JDK1.6中文文档">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>JDK1.6中文文档</h1>
+                        <p>官网下载的版本都是GBK版本，作者将其转换为UTF-8版本，并且是中文版本的喔！快来围观吧～</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="file/java/JDK1.6_UTF8_zh_CN/index.html" target="_blank" role="button">速速围观</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="second-slide" src="imgs/02.jpg" alt="英文字母大小写转换">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>英文字母大小写转换</h1>
+                        <p>英文字母大小写转换功能，转换你想转换的！</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="letterCase.html" target="_blank" role="button">试试效果</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="third-slide" src="imgs/03.jpg" alt="CSS代码格式化">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>CSS代码格式化</h1>
+                        <p>CSS代码格式化功能即将上线，快来美化你的代码吧～</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="http://xxx.xxx.xxx" target="_blank" role="button">先睹为快</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="third-slide" src="imgs/04.jpg" alt="vip在线影院">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>vip在线影院</h1>
+                        <p>vip在线影院功能上线，快来免费看电影吧～</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="video.html" target="_blank" role="button">免费看电影</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--正文内容-->
+    <div class="row">
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">Java虚拟机</li>
+                <a href="" data-toggle="modal" data-target="#javaBookMoreModal" style="float: right">More</a>
+            </ol>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="files/java_jvm/深入理解Java虚拟机2-周志明.pdf" target="_blank">1、深入理解Java虚拟机2-周志明</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">
+                    <a href="files/java_jvm/xxx.pdf" target="_blank">2、xxx</a>
+                </li>
+                <li class="list-group-item list-group-item-info">
+                    <a href="files/java_jvm/xxx.pdf" target="_blank">3、xxx</a>
+                </li>
+                <li class="list-group-item list-group-item-warning">
+                    <a href="files/java_jvm/xxx.pdf" target="_blank">4、xxx</a>
+                </li>
+                <li class="list-group-item list-group-item-danger">
+                    <a href="files/java_jvm/xxx.pdf" target="_blank">5、xxx</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">Java并发编程</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <div class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="files/java_juc/Java并发编程之美-翟陆续.pdf" target="_blank">1、Java并发编程之美-翟陆续</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">
+                    <a href="files/java_juc/并发的艺术-聂雪军译.pdf" target="_blank">2、并发的艺术-聂雪军译</a>
+                </li>
+                <li class="list-group-item list-group-item-info">
+                    <a href="files/java_juc/七周七并发模型-黄炎译.pdf" target="_blank">3、七周七并发模型-黄炎译</a>
+                </li>
+                <li class="list-group-item list-group-item-warning">
+                    <a href="files/java_juc/多处理器编程的艺术-金海译.pdf" target="_blank">4、多处理器编程的艺术-金海译</a>
+                </li>
+                <li class="list-group-item list-group-item-danger">
+                    <a href="files/springboot/xxx" target="_blank">5、xxx</a>
+                </li>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">SpringBoot</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <div class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="files/springboot/Spring实战-张卫滨译.pdf" target="_blank">1、Spring实战-张卫滨译</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">
+                    <a href="files/springboot/深入浅出SpringBoot2.x-杨开振.pdf" target="_blank">2、深入浅出SpringBoot2.x-杨开振</a>
+                </li>
+                <li class="list-group-item list-group-item-info">
+                    <a href="files/springboot/SpringBoot实战-汪云飞.pdf" target="_blank">3、SpringBoot实战-汪云飞</a>
+                </li>
+                <li class="list-group-item list-group-item-warning">
+                    <a href="files/springboot/SpringBatch批处理框架-刘相.pdf" target="_blank">4、SpringBatch批处理框架-刘相</a>
+                </li>
+                <li class="list-group-item list-group-item-danger">
+                    <a href="files/springboot/xxx" target="_blank">5、xxx</a>
+                </li>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">SpringCloud</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <div class="list-group">
+				<li class="list-group-item list-group-item-success">
+				    <a href="files/springcloud/重新定义SpringCloud实战-许进.pdf" target="_blank">1、重新定义SpringCloud实战-许进</a>
+				</li>
+                <li class="list-group-item list-group-item-primary">xxx</li>
+                <a href="#" class="list-group-item list-group-item-info">xxx</a>
+                <a href="#" class="list-group-item list-group-item-warning">xxx</a>
+                <a href="#" class="list-group-item list-group-item-danger">xxx</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">Java其它</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <div class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="files/java_other/阿里巴巴Java开发手册-华山版.pdf" target="_blank">1、阿里巴巴Java开发手册-华山版</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">xxx</li>
+                <a href="#" class="list-group-item list-group-item-info">xxx</a>
+                <a href="#" class="list-group-item list-group-item-warning">xxx</a>
+                <a href="#" class="list-group-item list-group-item-danger">xxx</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">前端API</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-success">xxx</a>
+                <li class="list-group-item list-group-item-primary">xxx</li>
+                <a href="#" class="list-group-item list-group-item-info">xxx</a>
+                <a href="#" class="list-group-item list-group-item-warning">xxx</a>
+                <a href="#" class="list-group-item list-group-item-danger">xxx</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">数据库API</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-success">xxx</a>
+                <li class="list-group-item list-group-item-primary">xxx</li>
+                <a href="#" class="list-group-item list-group-item-info">xxx</a>
+                <a href="#" class="list-group-item list-group-item-warning">xxx</a>
+                <a href="#" class="list-group-item list-group-item-danger">xxx</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">PHP API</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-success">xxx</a>
+                <li class="list-group-item list-group-item-primary">xxx</li>
+                <a href="#" class="list-group-item list-group-item-info">xxx</a>
+                <a href="#" class="list-group-item list-group-item-warning">xxx</a>
+                <a href="#" class="list-group-item list-group-item-danger">xxx</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">Html|Js|Css工具</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="letterCase.html" target="_blank">英文字母大小写转换</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">
+                    <a href="qrcode.html" target="_blank">二维码在线生成</a>
+                </li>
+                <li class="list-group-item list-group-item-info">xxx</li>
+                <li class="list-group-item list-group-item-warning">xxx</li>
+                <li class="list-group-item list-group-item-danger">xxx</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">在线工具</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="video.html" target="_blank">Vip在线影院</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">xxx</li>
+                <li class="list-group-item list-group-item-info">xxx</li>
+                <li class="list-group-item list-group-item-warning">xxx</li>
+                <li class="list-group-item list-group-item-danger">xxx</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">xxx</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="xxx.html" target="_blank">xxx</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">
+                    <a href="xxx.html" target="_blank">xxx</a>
+                </li>
+                <li class="list-group-item list-group-item-info">xxx</li>
+                <li class="list-group-item list-group-item-warning">xxx</li>
+                <li class="list-group-item list-group-item-danger">xxx</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ol class="breadcrumb">
+                <li class="active">xxx</li>
+                <a href="javascript:void(0)" style="float: right">More</a>
+            </ol>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    <a href="xxx.html" target="_blank">xxx</a>
+                </li>
+                <li class="list-group-item list-group-item-primary">
+                    <a href="xxx.html" target="_blank">xxx</a>
+                </li>
+                <li class="list-group-item list-group-item-info">xxx</li>
+                <li class="list-group-item list-group-item-warning">xxx</li>
+                <li class="list-group-item list-group-item-danger">xxx</li>
+            </ul>
+        </div>
+    </div>
+    <!--底部信息-->
+    <div id="footer"></div>
+    <!--Java Book More模态框-->
+    <div class="modal fade" id="javaBookMoreModal" tabindex="-1" role="dialog" aria-labelledby="javaBookMoreModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="javaBookMoreModalLabel">
+                        Java Book More
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>06、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
+                    <p>07、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
+                    <p>08、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
+                    <p>09、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
+                    <p>10、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
+                    <p>11、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
+                    <p>12、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
+                    <p>🌟最佳阅读方式：谷歌浏览器 + PDF Viewer插件。</p>
+                    <p>🌟若您有推荐的Java系列的书籍，可以给邮箱 <a href="mailto:bobi1234@foxmail.com" class="mail">bobi1234@foxmail.com</a> 来信，我们会及时去收集更新。</p>
+                    <p>Tool工具组敬上！</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/nprogress.js"></script>
+<script>
+    // 引入公共页面
+    $("#navbar").load("common/header.html");
+    $("#footer").load("common/footer.html");
+</script>
+</body>
+</html>

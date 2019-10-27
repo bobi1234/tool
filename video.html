@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bobi | 在线工具-Vip在线影院</title>
+    <meta name="keywords" content="tool,bobi tool,bobi's tool,bobi-tool,在线工具,bobi在线工具,个人在线工具平台,bobi个人在线工具平台">
+    <meta name="description" content="这是bobi的个人在线工具平台，主要提供有各种开发文档api，如JDK1.6中文文档及各种pdf书籍。也提供各种在线小工具，如vip在线影院、二维码生成及字母大小写转换等工具。">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.css">
+    <style>
+        body {
+            background: url(imgs/bg.png) repeat;
+        }
+
+        .navbar {
+            margin-bottom: 5px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <!--导航栏-->
+    <div id="navbar"></div>
+    <!--正文内容-->
+    <iframe src="http://www.wmxz.wang/video.php?url=https://v.qq.com/x/cover/wi8e2p5kirdaf3j.html" width="100%" height="500" frameborder="0" id="player"></iframe>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="粘贴VIP视频链接" id="url" onkeypress="if (event.keyCode == 13 && this.value != ''){ $('#playBtn').click();}">
+        <span class="input-group-addon" id="playBtn" style="cursor: pointer">播&nbsp;放</span>
+    </div>
+
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0)">教程</a>
+        </li>
+        <li class="active">使用方法：将想看的视频链接复制粘贴到输入框，点击播放按钮，耐心等待一会儿即可！若还不能播放，请切换播放线路试试！</li>
+    </ol>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            腾讯视频：<a href="https://v.qq.com/channel/movie?listpage=1&channel=movie&itype=100062" target="_blank">https://v.qq.com/channel/movie?listpage=1&channel=movie&itype=100062</a>
+        </li>
+        <li class="list-group-item">
+            爱奇艺视频：<a href="https://list.iqiyi.com/www/1/-------------11-1-1-iqiyi--.html" target="_blank">https://list.iqiyi.com/www/1/-------------11-1-1-iqiyi--.html</a>
+        </li>
+        <li class="list-group-item">
+            优酷视频：<a href="https://list.youku.com/category/show/c_96_s_6_d_1_pt_2.html?spm=a2h1n.8251845.filterPanel.5!6~1~3!3~A" target="_blank">https://list.youku.com/category/show/c_96_s_6_d_1_pt_2.html?spm=a2h1n.8251845.filterPanel.5!6~1~3!3~A</a>
+        </li>
+        <li class="list-group-item">
+            乐视视频：<a href="http://yuanxian.le.com/paySearchPage/index.shtml?filter=1&ref=hydhdy" target="_blank">http://yuanxian.le.com/paySearchPage/index.shtml?filter=1&ref=hydhdy</a>
+        </li>
+        <li class="list-group-item">
+            PPTV视频：<a href="http://sou.pptv.com/category/typeid_75099" target="_blank">http://sou.pptv.com/category/typeid_75099</a>
+        </li>
+    </ul>
+    <!--底部信息-->
+    <div id="footer"></div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/nprogress.js"></script>
+<script>
+    // 引入公共页面
+    $("#navbar").load("common/header.html");
+    $("#footer").load("common/footer.html");
+
+    /**
+     * 播放按钮
+     */
+    $("#playBtn").click(function () {
+        var api = "http://www.wmxz.wang/video.php?url=";
+        var url = $("#url").val();
+        if (url.trim() == "") {
+            sweetAlert("视频链接不能为空！", "出错了！", "error");
+            return;
+        }
+        $("#player").attr("src", api + url);
+    });
+
+    /**
+     * 关键词搜索
+     */
+    $("#searchBtn").click(function () {
+        var keyword = $("#keyword").val();
+        if (keyword.trim() == "") {
+            sweetAlert("关键词不能为空！", "出错了！", "error");
+            return;
+        }
+        window.open("https://v.qq.com/x/search/?q=" + keyword)
+    });
+</script>
+</body>
+</html>
