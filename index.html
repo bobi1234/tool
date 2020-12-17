@@ -24,7 +24,6 @@
     <div id="navbar"></div>
     <!--轮播图-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -362,37 +361,8 @@
     </div>
     <!--底部信息-->
     <div id="footer"></div>
-    <!--Java Book More模态框-->
-    <div class="modal fade" id="javaBookMoreModal" tabindex="-1" role="dialog" aria-labelledby="javaBookMoreModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="javaBookMoreModalLabel">
-                        Java Book More
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <p>06、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
-                    <p>07、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
-                    <p>08、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
-                    <p>09、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
-                    <p>10、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
-                    <p>11、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
-                    <p>12、<a href="files/java_jvm/xxx.pdf" target="_blank">xxx</a></p>
-                    <p>🌟最佳阅读方式：谷歌浏览器 + PDF Viewer插件。</p>
-                    <p>🌟若您有推荐的Java系列的书籍，可以给邮箱 <a href="mailto:super-wudibo@foxmail.com" class="mail">super-wudibo@foxmail.com</a> 来信，我们会及时去收集更新。</p>
-                    <p>Tool工具组敬上！</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--Java Books More-->
+    <div id="modal-01"></div>
 </div>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -403,6 +373,7 @@
     // 引入公共页面
     $("#navbar").load("common/header.html");
     $("#footer").load("common/footer.html");
+	$("#modal-01").load("common/modal-01.html");
 </script>
 </body>
 </html>
