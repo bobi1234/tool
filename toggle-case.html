@@ -1,44 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>Bobi | 在线工具-英文字母大小写转换</title>
-    <meta name="keywords" content="tool,bobi tool,bobi's tool,bobi-tool,在线工具,bobi在线工具,个人在线工具平台,bobi个人在线工具平台">
-    <meta name="description" content="这是bobi的个人在线工具平台，主要提供有各种开发文档api，如JDK1.6中文文档及各种pdf书籍。也提供各种在线小工具，如vip在线影院、二维码生成及字母大小写转换等工具。">
+    <title>无敌波 | 英文字母大小写转换</title>
+    <meta name="keywords" content="wudibo,tool,无敌波,在线工具,wudibo在线工具,个人在线工具平台,wudibo个人在线工具平台">
+    <meta name="description" content="这是无敌波的个人在线工具平台，主要提供有各种开发文档API及各种在线小工具。">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.css">
     <style>
-        body {
-            background: url(imgs/bg.png) repeat;
-        }
-
-        .navbar {
-            margin-bottom: 5px;
-        }
-
-        .rows-width {
-            width: 100%;
-        }
-
-        .mtb15 {
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        /*手机端间隔距离*/
-        .mtb5 {
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
+        body{background:url(imgs/bg.png) repeat}
+		.navbar{margin-bottom:5px}
+		.rows-width{width:100%}
+		.mtb15{margin-top:15px;margin-bottom:15px}
+		.mtb5{margin-top:5px;margin-bottom:5px}
     </style>
 </head>
 
 <body>
 <div class="container">
-    <!--导航栏-->
-    <div id="navbar"></div>
+    <!--引入header-->
+    <div id="header"></div>
     <!--正文内容-->
     <textarea class="form-control rows-width" rows="6" id="from" placeholder="请把你需要转换的内容粘贴在这里！"></textarea>
     <div class="row text-center mtb15">
@@ -53,18 +36,17 @@
         </div>
     </div>
     <textarea class="form-control rows-width" rows="6" id="to"></textarea>
-    <!--底部信息-->
+    <!--引入footer-->
     <div id="footer"></div>
 </div>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.js"></script>
-<script src="js/weather.js"></script>
 <script src="js/nprogress.js"></script>
 <script>
     // 引入公共页面
-    $("#navbar").load("common/header.html");
+    $("#header").load("common/header.html");
     $("#footer").load("common/footer.html");
 
     /**
