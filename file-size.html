@@ -19,90 +19,104 @@
 </head>
 
 <body>
-<div class="container">
-    <!--导航栏-->
-    <div id="navbar"></div>
-    <!--正文内容-->
-    <div class="input-group">
-        <input type="text" class="form-control border-right" placeholder="请输入内容(单位为B)" id="question">
-        <span class="input-group-addon">=</span>
-        <input type="text" class="form-control border-left" placeholder="这里是结果" id="answer">
+    <div class="container">
+        <!--导航栏-->
+        <div id="navbar"></div>
+        <!--正文内容-->
+        <div class="input-group">
+            <input type="text" class="form-control border-right" placeholder="请输入内容(单位为B)" id="question">
+            <span class="input-group-addon">=</span>
+            <input type="text" class="form-control border-left" placeholder="这里是结果" id="answer">
+        </div>
+        <div class="input-group mt10">
+            <input type="text" class="form-control border-right" placeholder="请输入内容(单位为KB)" id="question2">
+            <span class="input-group-addon" id="basic-addon1">=</span>
+            <input type="text" class="form-control border-left" placeholder="这里是结果" id="answer2">
+        </div>
+        <!--底部信息-->
+        <div id="footer"></div>
     </div>
-    <div class="input-group mt10">
-        <input type="text" class="form-control border-right" placeholder="请输入内容(单位为KB)" id="question2">
-        <span class="input-group-addon" id="basic-addon1">=</span>
-        <input type="text" class="form-control border-left" placeholder="这里是结果" id="answer2">
-    </div>
-    <!--底部信息-->
-    <div id="footer"></div>
-</div>
+</body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.js"></script>
 <script src="js/nprogress.js"></script>
 <script>
-    // 引入公共页面
-    $("#navbar").load("common/header.html");
-    $("#footer").load("common/footer.html");
+// 引入公共页面
+$("#navbar").load("common/header.html");
+$("#footer").load("common/footer.html");
 
-    // 监听文本框变化
-    $("#question").on('input propertychange', function () {
-        var _val = $(this).val();
-        if (isNaN(_val)) {
-            $("#answer").val("请输入数字类型！");
-            return;
-        }
-        $("#answer").val(getFilesize(_val));
-    })
-
-    /**
-     * 计算文件大小函数(保留两位小数)
-     * @param size ,Size为字节大小
-     * @returns {string}
-     */
-    function getFilesize(size) {
-        if (!size)
-            return "";
-        var num = 1024.00; //byte
-        if (size < num)
-            return size + "B";
-        if (size < Math.pow(num, 2))
-            return (size / num).toFixed(2) + "K"; //kb
-        if (size < Math.pow(num, 3))
-            return (size / Math.pow(num, 2)).toFixed(2) + "M"; //M
-        if (size < Math.pow(num, 4))
-            return (size / Math.pow(num, 3)).toFixed(2) + "G"; //G
-        return (size / Math.pow(num, 4)).toFixed(2) + "T"; //T
+// 监听文本框变化
+$("#question").on('input propertychange', function () {
+    var _val = $(this).val();
+    if (isNaN(_val)) {
+        $("#answer").val("请输入数字类型！");
+        return;
     }
+    $("#answer").val(getFilesize(_val));
+})
 
-    // 监听文本框变化
-    $("#question2").on('input propertychange', function () {
-        var _val = $(this).val();
-        if (isNaN(_val)) {
-            $("#answer2").val("请输入数字类型！");
-            return;
-        }
-        $("#answer2").val(getFilesize2(_val));
-    })
-
-    /**
-     * 计算文件大小函数(保留两位小数)
-     * @param size
-     * @returns {string}
-     */
-    function getFilesize2(size) {
-        if (!size)
-            return "";
-        var num = 1024.00;
-        if (size < num)
-            return size + "K";
-        if (size < Math.pow(num, 2))
-            return (size / num).toFixed(2) + "M";
-        if (size < Math.pow(num, 3))
-            return (size / Math.pow(num, 2)).toFixed(2) + "G";
-        return (size / Math.pow(num, 3)).toFixed(2) + "T";
+/**
+ * 计算文件大小函数(保留两位小数)
+ * @param size ,Size为字节大小
+ * @returns {string}
+ */
+function getFilesize(size) {
+    if (!size) {
+        return "";
     }
+    // byte
+    let num = 1024.00;
+    if (size < num) {
+        return size + "B";
+    }
+    if (size < Math.pow(num, 2)) {
+        // kb
+        return (size / num).toFixed(2) + "K";
+    }
+    if (size < Math.pow(num, 3)) {
+        // M
+        return (size / Math.pow(num, 2)).toFixed(2) + "M";
+    }
+    if (size < Math.pow(num, 4)) {
+        // G
+        return (size / Math.pow(num, 3)).toFixed(2) + "G";
+    }
+    // T
+    return (size / Math.pow(num, 4)).toFixed(2) + "T";
+}
+
+// 监听文本框变化
+$("#question2").on('input propertychange', function () {
+    let _val = $(this).val();
+    if (isNaN(_val)) {
+        $("#answer2").val("请输入数字类型！");
+        return;
+    }
+    $("#answer2").val(getFilesize2(_val));
+})
+
+/**
+ * 计算文件大小函数(保留两位小数)
+ * @param size
+ * @returns {string}
+ */
+function getFilesize2 (size) {
+    if (!size) {
+        return "";
+    }
+    let num = 1024.00;
+    if (size < num) {
+        return size + "K";
+    }
+    if (size < Math.pow(num, 2)) {
+        return (size / num).toFixed(2) + "M";
+    }
+    if (size < Math.pow(num, 3)) {
+        return (size / Math.pow(num, 2)).toFixed(2) + "G";
+    }
+    return (size / Math.pow(num, 3)).toFixed(2) + "T";
+}
 </script>
-</body>
 </html>

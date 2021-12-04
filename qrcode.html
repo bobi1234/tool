@@ -48,7 +48,7 @@
      * 在线转换为二维码
      */
     function qrcode() {
-        var from = $("#from").val().trim();
+        let from = $("#from").val().trim();
         if (from == "") {
             sweetAlert("请输入内容！", "出错了！", "error");
             return;
